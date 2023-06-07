@@ -13,3 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'App\Http\Controllers\TodoController@index')->name('todos.index');
+Route::get('/todos/create', 'App\Http\Controllers\TodoController@create')->name('todos.create');
+Route::post('/todos', 'App\Http\Controllers\TodoController@store')->name('todos.store');
+Route::get('/todos/{todo}', 'App\Http\Controllers\TodoController@show')->name('todos.show');
+Route::get('/todos/{todo}/edit', 'App\Http\Controllers\TodoController@edit')->name('todos.edit');
+Route::put('/todos/{todo}', 'App\Http\Controllers\TodoController@update')->name('todos.update');
+Route::delete('/todos/{todo}', 'App\Http\Controllers\TodoController@destroy')->name('todos.destroy');
